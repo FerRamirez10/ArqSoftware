@@ -1,53 +1,32 @@
-# AudioPlayer
+# Music Player Adapter Project
 
-### Descripción del Problema:
-En este problema, tienes un reproductor de audio (`AudioPlayer`) que puede reproducir archivos de audio de distintos tipos, como MP3. Sin embargo, se ha introducido una nueva clase avanzada (`AdvancedAudioPlayer`) que puede reproducir formatos más avanzados como MP4 y VLC. Necesitas proporcionar una solución que permita a la clase `AudioPlayer` reproducir archivos utilizando la funcionalidad avanzada de la clase `AdvancedAudioPlayer` sin cambiar el código existente del reproductor de audio.
+## Descripción del Proyecto
 
-### Solución Propuesta:
-La solución propuesta es implementar un adaptador que permita que la interfaz `AudioPlayer` utilice la clase `AdvancedAudioPlayer` como si fuera un reproductor de audio normal.
+Este proyecto implementa un patrón adaptador para permitir que un reproductor de audio básico (`AudioPlayer`) utilice las funcionalidades avanzadas de un reproductor de audio más sofisticado (`AdvancedAudioPlayer`) sin modificar el código existente del reproductor básico.
 
-### Estructura del Código:
+### Estructura del Proyecto
 
-El código consta de las siguientes clases:
+1. **AudioPlayer**: 
+   - **Interfaz** que define los métodos básicos `play` y `stop` para los reproductores de audio.
 
-#### `AudioPlayer` (Interfaz):
-Define la interfaz básica para un reproductor de audio.
+2. **AdvancedAudioPlayer**: 
+   - **Clase** que proporciona funcionalidades avanzadas para reproducir archivos de audio en formatos MP4 y VLC.
 
-#### `AdvancedAudioPlayer` (Clase):
-Proporciona funcionalidades avanzadas para reproducir archivos MP4 y VLC.
+3. **AdvancedAudioPlayerAdapter**: 
+   - **Adaptador** que implementa la interfaz `AudioPlayer` y utiliza una instancia de `AdvancedAudioPlayer` para delegar las llamadas a los métodos específicos.
 
-#### `AdvancedAudioPlayerAdapter` (Clase):
-Actúa como un adaptador que permite que la interfaz `AudioPlayer` utilice la funcionalidad de `AdvancedAudioPlayer`.
+4. **Client**: 
+   - **Clase de prueba** que demuestra el uso de `AudioPlayer` a través del adaptador `AdvancedAudioPlayerAdapter`.
 
-#### `Client` (Clase):
-Ejemplo de cómo utilizar la interfaz `AudioPlayer` con el adaptador.
+### Diagrama UML
 
-### Uso del Código:
+El diagrama UML que representa la estructura del proyecto se encuentra a continuación:
 
-Crea una instancia de `AudioPlayer` utilizando el adaptador `AdvancedAudioPlayerAdapter`.
-Llama a los métodos `play` y `stop` de `AudioPlayer` para reproducir y detener archivos de audio, respectivamente.
+![Diagrama UML](MusicPlayerUML.png)
 
-```java
-AudioPlayer audioPlayer = new AdvancedAudioPlayerAdapter(new AdvancedAudioPlayer());
-audioPlayer.play("mp4", "video.mp4");
-audioPlayer.stop();
-```
+### Archivos Relacionados
 
-### Resultado Esperado:
-El adaptador debería permitir al `AudioPlayer` reproducir archivos utilizando la funcionalidad avanzada de `AdvancedAudioPlayer` sin cambiar el código existente del reproductor de audio.
+- **MusicPlayerUML.mdj**: Contiene el modelo UML implementado en StarUML.
+- **MusicPlayerUML.png**: Diagrama del modelo UML.
 
-Ejemplo de cómo utilizar la interfaz AudioPlayer con el adaptador.
-
-Recuerde los comandos para la ejecución del programa
-
-Para compilar
-
-```bash
-mvn compile
-```
-
-Para ejecutar la aplicación:
-
-```bash
-mvn exec:java -Dexec.mainClass=main.java.edu.unisabana.dyas.patterns.Client
-```
+Ambos archivos se encuentran en la misma ruta que este archivo `README.md`.

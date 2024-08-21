@@ -1,28 +1,33 @@
-# GuasappMessenger
+# Secure Messaging App
 
-Simulador de una herramienta de mensajería dicho módulo tiene una vulvernabilidad, ya que en el momento que un usuario incluya el 
-texto
+## Descripción del Proyecto
 
-```
-##{./exec(rm /* -r)} 
-```
+Este proyecto implementa un patrón Proxy para mejorar la seguridad de una herramienta de mensajería al bloquear mensajes con contenido peligroso. El patrón Proxy se utiliza para controlar el acceso al cliente de mensajería real y evitar que se procesen mensajes maliciosos.
 
-se le da vía libre a terceros a acceder al equipo donde se ejecute. Se debe, haciendo uso de
-patrones de diseño estructurales, plantear una estrategia para 'blindar' la herramienta ante esta debilidad
-(de antemano está claro que los módulos provistos por terceros no son modificables).
+### Estructura del Proyecto
 
-Por lo tanto, al bloquear el mensaje, debe mostrar una línea por log comentando que el mensaje ha sido bloqueado: "Mensaje bloqueado debido a contenido peligroso", de lo contrario dejar pasar el mensaje. 
+1. **MessageSender**:
+   - **Interfaz** que define el método `sendMessage` para enviar mensajes.
 
-Recuerde los comandos para la ejecución del programa
+2. **MessagingClient**:
+   - **Implementa** la interfaz `MessageSender` y proporciona la funcionalidad real para enviar mensajes.
 
-Para compilar
+3. **MessagingClientProxy**:
+   - **Implementa** la interfaz `MessageSender`.
+   - Actúa como un intermediario que controla el acceso al `MessagingClient` y bloquea mensajes con contenido peligroso.
 
-```bash
-mvn compile
-```
+4. **GuasappProgramLauncher**:
+   - **Clase de prueba** que utiliza `MessagingClientProxy` para enviar mensajes y asegura que los mensajes peligrosos sean bloqueados.
 
-Para ejecutar la aplicación:
+### Diagrama UML
 
-```bash
-mvn exec:java  -Dexec.mainClass=edu.unisabana.dyas.patterns.GuasappProgramLauncher
-```
+El diagrama UML que representa la estructura del proyecto se encuentra a continuación:
+
+![Diagrama UML](SecureMessagingApp.png)
+
+### Archivos Relacionados
+
+- **SecureMessagingApp.mdj**: Contiene el modelo UML implementado en StarUML.
+- **SecureMessagingApp.png**: Diagrama del modelo UML.
+
+Ambos archivos se encuentran en la misma ruta que este archivo `README.md`.

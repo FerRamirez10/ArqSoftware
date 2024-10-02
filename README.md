@@ -10,7 +10,8 @@ Mi nombre es **Diego Fernando Ramírez Tenjo**, estudiante de Ingeniería Inform
 
 - **Taller 1 - Método de la fábrica**
 - **Taller 2 - Adapter y Proxy**
-- **Taller n - Próximamente**
+- **Taller 3 - TDD**
+- **Parcial aplicado**
 
 Cada carpeta de taller incluirá el código fuente, diagramas, y cualquier otro material relevante para cada ejercicio.
 

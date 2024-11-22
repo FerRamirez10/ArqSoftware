@@ -12,6 +12,9 @@ Mi nombre es **Diego Fernando Ramírez Tenjo**, estudiante de Ingeniería Inform
 - **Taller 2 - Adapter y Proxy**
 - **Taller 3 - TDD**
 - **Parcial aplicado**
+- **Taller 4 - CI**
+- **Taller 5 - Programación reactiva**
+- **Taller 6 - Multi-threading**
 
 Cada carpeta de taller incluirá el código fuente, diagramas, y cualquier otro material relevante para cada ejercicio.
 
